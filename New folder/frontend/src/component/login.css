@@ -1,0 +1,21 @@
+.container{
+    text-align: center;
+}
+.ht{
+    border-radius: 5px;
+}
+.tt{
+    border-radius: 5px;
+    border-width: 2px;
+}
+.card{
+    width: 500px;
+    border-radius: 10px;
+    border: none;
+    background:linear-gradient(180deg,hwb(0 86% 13%), #ffffff00)
+}
+body{
+    background-image: url('https://image.slidesdocs.com/responsive-images/background/gray-business-card-simple-business-card-powerpoint-background_add9a5145e__960_540.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

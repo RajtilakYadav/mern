@@ -32,6 +32,12 @@ const Navebar = () => {
        <Link className="nav-link" to="/about">
          About
        </Link>
+       <Link className="nav-link" to="/EventHandling">
+         EventHandling
+       </Link>
+       <Link className="nav-link" to="/Todolist">
+         Todolist
+       </Link>
        <Link
          className="nav-link disabled"
          to="/Disabled"

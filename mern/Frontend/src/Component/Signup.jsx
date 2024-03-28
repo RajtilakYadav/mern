@@ -1,6 +1,43 @@
 import React from 'react'
+import {useFormik} from 'formik'
+import * as yup from 'yup'
+import './Signup.css'
 
-function Signup() {
+const SignupSchema = yup.object().shape({
+  email:yup.string().email('invalid email').required('Required'),
+  // password: yup.string().required('required').min(8),
+  name: yup.string().required('firstName'),
+  password: yup.string()
+  .required("Password is required")
+  .min(4, "Password length should be at least 4 characters")
+  .max(12, "Password cannot exceed more than 12 characters"),
+  cpassword: yup.string()
+  .required("Confirm Password is required")
+  .min(4, "Password length should be at least 4 characters")
+  .max(12, "Password cannot exceed more than 12 characters")
+  .oneOf([yup.ref("password")], "Passwords do not match")
+
+})
+
+const SignupForm = () =>useFormik({
+  initialValues:{
+    email:'',
+    name: '',
+    password:'',
+    cpassword: ''
+  },
+  onSubmit : (value,{resetForm}) =>{
+    console.log(value)
+    resetForm()
+  },
+  validationSchema: SignupSchema
+
+}) 
+
+
+
+
+const  Signup = () => {
   return (
     <div>
       <section className="sec vh-100" style={{ backgroundColor: "#eee" }}>
@@ -14,13 +51,16 @@ function Signup() {
                 <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                   Sign up
                 </p>
-                <form className="mx-1 mx-md-4">
+                {/* {step2 : Handling when submit} */}
+                <form className="mx-1 mx-md-4" onSubmit={SignupForm.handleSubmit}>
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-user fa-lg me-3 fa-fw" />
                     <div className="form-outline flex-fill mb-0">
                       <input
                         type="text"
-                        id="form3Example1c"
+                        id="name"
+                        onChange={SignupForm.handleChange}
+                        value={SignupForm.values.name}
                         className="form-control"
                       />
                       <label className="form-label" htmlFor="form3Example1c">
@@ -33,7 +73,9 @@ function Signup() {
                     <div className="form-outline flex-fill mb-0">
                       <input
                         type="email"
-                        id="form3Example3c"
+                        id="email"
+                        onChange={SignupForm.handleChange}
+                        value={SignupForm.values.email}
                         className="form-control"
                       />
                       <label className="form-label" htmlFor="form3Example3c">
@@ -46,7 +88,9 @@ function Signup() {
                     <div className="form-outline flex-fill mb-0">
                       <input
                         type="password"
-                        id="form3Example4c"
+                        id="password"
+                        onChange={SignupForm.handleChange}
+                        value={SignupForm.values.password}
                         className="form-control"
                       />
                       <label className="form-label" htmlFor="form3Example4c">
@@ -59,7 +103,9 @@ function Signup() {
                     <div className="form-outline flex-fill mb-0">
                       <input
                         type="password"
-                        id="form3Example4cd"
+                        id="cpassword"
+                        onChange={SignupForm.handleChange}
+                        value={SignupForm.values.cpassword}
                         className="form-control"
                       />
                       <label className="form-label" htmlFor="form3Example4cd">
