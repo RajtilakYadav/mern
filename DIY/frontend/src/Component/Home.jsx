@@ -13,8 +13,8 @@ function Home() {
             style={{
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
-              height: 80,
-              width: 130
+              height: 50,
+              width: 100
             }}
           />{" "}
         </a>
@@ -103,9 +103,9 @@ function Home() {
       </div>
     </nav>
   </header>
-  <section className="stn 100vh">
-    <video className="card-img-top" muted="" autoPlay="" loop="">
-      <source src="./vid.mp4" type="video/mp4" />
+  <section className="stn 100vh"> 
+    <video className="card-img-top" autoplay controls muted loop disablePictureInPicture>
+      <source src="../Document/vid.mp4" type="video/mp4" />
     </video>
     {/* <h1 class="hero-title">Welcome to my Website</h1>
   <h5 class="hero-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit
@@ -238,17 +238,15 @@ function Home() {
           Video Tutorial
         </h1>
       </a>
-      <div className="container d-flex justify-content-center">
+      <div className="container d-flex justify-content-center mt-3">
         <div className="row">
           <div className="col-md-4">
             <div className="card Larger shadow" style={{ margin: "1em auto" }}>
               <video
-                src="./vid5.mp4"
-                className="card-img-top"
-                controlslist="none"
-                muted=""
-                autoPlay=""
-                loop=""
+                src="../Document/vid5.mp4"
+                className="card-img-top "
+                autoplay controls muted loop
+                disablePictureInPicture
               />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -261,11 +259,10 @@ function Home() {
           <div className="col-md-4">
             <div className="card Larger shadow" style={{ margin: "1em auto" }}>
               <video
-                src="./vid3.mp4"
+                src="../Document/vid3.mp4"
                 className="card-img-top"
-                muted=""
-                autoPlay=""
-                loop=""
+                autoplay controls muted loop
+                disablePictureInPicture
               />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
@@ -278,11 +275,10 @@ function Home() {
           <div className="col-md-4">
             <div className="card Larger shadow" style={{ margin: "1em auto" }}>
               <video
-                src="./vid2.mp4"
-                className="card-img-top"
-                muted=""
-                autoPlay=""
-                loop=""
+                src="../Document/vid2.mp4"
+                className="card-img-top "
+                autoplay controls muted loop
+                disablePictureInPicture
               />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>

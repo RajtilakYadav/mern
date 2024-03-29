@@ -9,13 +9,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.back {
+/*.back {
     background-image: url('https://as2.ftcdn.net/v2/jpg/02/91/15/47/1000_F_291154710_qmCB6ciFMk5FGBL3KZvZaPtNMzefWAXD.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     width: 100%;
-}
+}*/
 
 .wrapper {
     max-width: 400px;
